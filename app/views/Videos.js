@@ -1,6 +1,5 @@
 import React from 'react';
 import {Text, View, FlatList, Image, TouchableWithoutFeedback} from 'react-native';
-import Request from "../helpers/request";
 
 export class Video extends React.Component {
 
@@ -35,6 +34,7 @@ export class Video extends React.Component {
 
 
     render() {
+        const { navigate } = this.props.navigation;
         console.log('checking all the data called', this.state.videoList)
         return (
             <View>
@@ -44,6 +44,7 @@ export class Video extends React.Component {
                             data={this.state.videoList}
                             renderItem={({item}) =>
                                 <TubeItem
+                                    navigate = {navigate}
                                     id={item.id.videoId}
                                     title={item.snippet.title}
                                     imageSrc={item.snippet.thumbnails.high.url}
@@ -68,9 +69,11 @@ export class TubeItem extends React.Component {
 
     onPress = () => {
         console.log('checking the video id on click', this.props.id);
+        this.props.navigate('VideoDetailRT', {ytubeId: this.props.id});
     }
 
     render() {
+
         return (
             <TouchableWithoutFeedback onPress={this.onPress}>
                 <View style={{paddingTop: 20, alignItems: 'center'}}>
