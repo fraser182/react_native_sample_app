@@ -10,23 +10,27 @@ import React from 'react';
 import {Home} from './app/views/Home.js';
 import {Contact} from "./app/views/Contact";
 import {StackNavigator} from 'react-navigation';
-import { Video } from "./app/views/Videos";
-import { VideoDetail } from "./app/views/VideoDetail";
+import {Video} from "./app/views/Videos";
+import {VideoDetail} from "./app/views/VideoDetail";
+import {Register} from './app/views/Register';
 
 const MyRoutes = StackNavigator({
-    HomeRT: {
-        screen: Home
+        HomeRT: {
+            screen: Home
+        },
+        ContactRT: {
+            screen: Contact
+        },
+        LessonsRT: {
+            screen: Video
+        },
+        VideoDetailRT: {
+            screen: VideoDetail
+        },
+        RegisterRT: {
+            screen: Register
+        },
     },
-    ContactRT: {
-        screen: Contact
-    },
-    LessonsRT: {
-        screen: Video
-    },
-    VideoDetailRT: {
-        screen : VideoDetail
-    },
-},
     {
         initialRouteName: 'HomeRT'
 
