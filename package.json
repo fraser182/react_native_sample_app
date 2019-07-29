@@ -10,6 +10,7 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.4",
+    "react-native-webview": "^5.12.1",
     "react-navigation": "^1.5.11"
   },
   "devDependencies": {
