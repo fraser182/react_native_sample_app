@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableHighlight, Alert} from 'react-native';
 import {Header} from "../sections/Header";
-import {StackNavigator} from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
+
 
 export class Contact extends React.Component {
     static navigationOptions = {
@@ -18,8 +19,8 @@ export class Contact extends React.Component {
     }
 
     clearFields=()=> this.setState(
-        {msg: '', name: '', email: ''}
-    )
+        {name: '', msg:'', email: ''}
+    );
 
     sendMessage=()=> {
         Alert.alert(this.state.name, this.state.msg);
@@ -27,9 +28,10 @@ export class Contact extends React.Component {
     }
 
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Header message='Press to Login'/>
+                <Header navigate = { navigate } message='Press to Login'/>
                 <Text style={styles.heading}>Contact Us</Text>
 
                 <TextInput
