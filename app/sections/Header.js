@@ -34,7 +34,7 @@ export class Header extends React.Component {
     componentDidMount() {
         AsyncStorage.getItem('userLoggedIn', (err, result) => {
             if (result == 'none') {
-                console.log('NONE');
+                console.log('no user has logged in');
             } else if (result == null) {
                 AsyncStorage.setItem('userLoggedIn', 'none', (err, result) => {
                     console.log('Set user to NONE');
